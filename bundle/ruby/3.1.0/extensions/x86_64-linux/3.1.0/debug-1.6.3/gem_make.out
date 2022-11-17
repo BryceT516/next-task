@@ -1,0 +1,16 @@
+current directory: /bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 -r ./siteconf20221113-14-7mxkr.rb extconf.rb
+creating Makefile
+
+current directory: /bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= clean
+
+current directory: /bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20221113-14-gelno3/debug
