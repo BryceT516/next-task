@@ -1,10 +1,8 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @task %>
-
-<div>
-  <%= link_to "Edit this task", edit_task_path(@task) %> |
-  <%= link_to "Back to tasks", tasks_path %>
-
-  <%= button_to "Destroy this task", @task, method: :delete %>
-</div>
+<main class="container">
+    <%= link_to sanitize("&larr; Back to tasks"), tasks_path %>
+    <div class="header">
+        <h1>
+            <%= @task.name %>
+        </h1>
+    </div>
+</main>

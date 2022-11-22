@@ -6,4 +6,6 @@ USER user
 
 WORKDIR /app
 
-CMD ["rails", "server", "-b", "0.0.0.0"]
+# CMD ["rails", "server", "-b", "0.0.0.0"]
+
+CMD ["bin/dev"]

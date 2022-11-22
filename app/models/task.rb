@@ -1,6 +1,5 @@
 class Task < ApplicationRecord
-  belongs_to :user
+    validates :name, presence: true
 
-  enum :status, [ :incomplete, :complete ]
-  
+    scope :ordered, -> { order(id: :desc) }
 end

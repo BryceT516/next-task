@@ -10,24 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_14_051340) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_18_012521) do
   create_table "tasks", force: :cascade do |t|
-    t.string "title"
-    t.text "note"
-    t.date "due_by_date"
-    t.integer "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "status", default: 0
-    t.index ["user_id"], name: "index_tasks_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "email"
-    t.string "password_digest"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "tasks", "users"
 end

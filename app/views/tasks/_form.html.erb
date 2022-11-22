@@ -1,32 +1,11 @@
-<%= form_with(model: task) do |form| %>
+<%= simple_form_for task, defaults: { input_html: { class: "task form" } } do |f| %>
   <% if task.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
-
-      <ul>
-        <% task.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="error-message">
+      <%= task.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :note, style: "display: block" %>
-    <%= form.text_area :note %>
-  </div>
-
-  <div>
-    <%= form.label :due_by_date, style: "display: block" %>
-    <%= form.date_field :due_by_date %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= f.input :name, input_html: { :autofocus => true, "data-form-type": "other" } %>
+  <%= link_to "Cancel", tasks_path, class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
 <% end %>

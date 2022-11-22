@@ -2,46 +2,49 @@ require "application_system_test_case"
 
 class TasksTest < ApplicationSystemTestCase
   setup do
-    @task = tasks(:one)
+    @task = Task.ordered.first 
   end
 
-  test "visiting the index" do
-    visit tasks_url
+  test "Showing a task" do
+    visit tasks_path
+    click_link @task.name
+
+    assert_selector "h1", text: @task.name
+  end
+
+  test "Creating a new task" do
+    visit tasks_path
     assert_selector "h1", text: "Tasks"
-  end
-
-  test "should create task" do
-    visit tasks_url
+    
     click_on "New task"
+    fill_in "Name", with: "Capybara task"
 
-    fill_in "Due by date", with: @task.due_by_date
-    fill_in "Note", with: @task.note
-    fill_in "Title", with: @task.title
-    fill_in "User", with: @task.user_id
-    click_on "Create Task"
+    assert_selector "h1", text: "Tasks"
+    click_on "Create task"
 
-    assert_text "Task was successfully created"
-    click_on "Back"
+    assert_selector "h1", text: "Tasks"
+    assert_text "Capybara task"
   end
 
-  test "should update Task" do
-    visit task_url(@task)
-    click_on "Edit this task", match: :first
+  test "Updating a task" do
+    visit tasks_path
+    assert_selector "h1", text: "Tasks"
 
-    fill_in "Due by date", with: @task.due_by_date
-    fill_in "Note", with: @task.note
-    fill_in "Title", with: @task.title
-    fill_in "User", with: @task.user_id
-    click_on "Update Task"
+    click_on "Edit", match: :first
+    fill_in "Name", with: "Updated task"
 
-    assert_text "Task was successfully updated"
-    click_on "Back"
+    assert_selector "h1", text: "Tasks"
+    click_on "Update task"
+
+    assert_selector "h1", text: "Tasks"
+    assert_text "Updated task"
   end
 
-  test "should destroy Task" do
-    visit task_url(@task)
-    click_on "Destroy this task", match: :first
+  test "Destroying a task" do
+    visit tasks_path
+    assert_text @task.name
 
-    assert_text "Task was successfully destroyed"
+    click_on "Delete", match: :first
+    assert_no_text @task.name
   end
 end

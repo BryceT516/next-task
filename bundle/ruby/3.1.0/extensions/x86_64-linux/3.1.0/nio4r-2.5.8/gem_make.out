@@ -1,5 +1,5 @@
 current directory: /bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
-/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 -r ./siteconf20221113-14-k9luxb.rb extconf.rb
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 -r ./siteconf20221117-13-r4ohgr.rb extconf.rb
 checking for unistd.h... yes
 checking for linux/aio_abi.h... yes
 checking for linux/io_uring.h... yes
@@ -258,4 +258,4 @@ linking shared-object nio4r_ext.so
 
 current directory: /bundle/ruby/3.1.0/gems/nio4r-2.5.8/ext/nio4r
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20221113-14-ytxvwn
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20221117-13-onvotz

@@ -1,5 +1,5 @@
 current directory: /bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
-/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 -r ./siteconf20221113-14-7mxkr.rb extconf.rb
+/usr/local/bin/ruby -I /usr/local/lib/ruby/3.1.0 -r ./siteconf20221117-13-f3vylx.rb extconf.rb
 creating Makefile
 
 current directory: /bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
@@ -13,4 +13,4 @@ linking shared-object debug/debug.so
 
 current directory: /bundle/ruby/3.1.0/gems/debug-1.6.3/ext/debug
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 debug.so ./.gem.20221113-14-gelno3/debug
+/usr/bin/install -c -m 0755 debug.so ./.gem.20221117-13-pqqt1s/debug

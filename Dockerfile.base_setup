@@ -11,11 +11,14 @@ RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID user
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg -o /root/yarn-pubkey.gpg && apt-key add /root/yarn-pubkey.gpg
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" > /etc/apt/sources.list.d/yarn.list
 RUN curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
-RUN apt-get update -qq && apt-get install -y --no-install-recommends nodejs yarn postgresql-client
+RUN apt-get update -qq && apt-get install -y --no-install-recommends nodejs yarn postgresql-client wget
 
 RUN apt update -y
 RUN apt upgrade -y
 RUN apt install sqlite3 -y
+
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 
 # Default directory
 RUN mkdir -p /app
